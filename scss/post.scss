@@ -472,13 +472,65 @@ p, div, span, li, td, th {
 // Course Content Area
 // ============================================================================
 
-#region-main {
-    > .card {
-        border: none;
-        box-shadow: $box-shadow-sm;
+.pagelayout-course {
+    .main-inner {
+        background-color: transparent !important; 
+    }
+
+    .navigation {
+        background-color: transparent !important;
+
+        .nav-tabs {
+            background-color: transparent !important;
+        }
+    }
+    
+    #region-main {
+        background-color: transparent !important;
+
+        #section-0 {
+            .course-section-header {
+                flex-wrap: wrap !important;
+
+                > div:last-child {
+                    flex-basis: 100% !important;
+                    font-size: 12px;
+                }
+            }
+        }
+        .course-section {
+            .section-item {
+                background-color: #ffffff;
+
+                .icons-collapse-expand {
+                    background-color: $primarycolor;
+
+                    .expanded-icon {
+                        color: $highlightcolor !important;
+                    }
+                }
+
+                .sectionname
+                    > a {
+                    color: #000000 !important
+                }
+
+                .sectionbadges {
+                    flex: auto;
+                    background-color: $primarycolor;
+                    margin-left: 1rem;
+                    border-radius: .25rem;
+                }
+            }
+        }
+
+        > .card {
+            border: none;
+            box-shadow: $box-shadow-sm;
         
-        @include media-breakpoint-up(lg) {
-            box-shadow: $box-shadow;
+            @include media-breakpoint-up(lg) {
+                box-shadow: $box-shadow;
+            }
         }
     }
 }
